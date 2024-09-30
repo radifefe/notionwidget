@@ -1,0 +1,18 @@
+<div style="text-align: center; font-family: Arial, sans-serif;">
+  <div id="date" style="font-size: 18px; margin-bottom: 10px;"></div>
+  <div id="time" style="font-size: 24px; font-weight: bold;"></div>
+</div>
+
+<script>
+function updateDateTime() {
+  const now = new Date();
+  const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+  
+  document.getElementById('date').textContent = now.toLocaleDateString('tr-TR', dateOptions);
+  document.getElementById('time').textContent = now.toLocaleTimeString('tr-TR', timeOptions);
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
